@@ -187,4 +187,4 @@ def visitar_enlaces(driver: webdriver, datos: list):
 
     # Escribir en un archivo
     with open("datos.json", "w", encoding="utf-8") as archivo:
-        json.dump(output, archivo, indent=4)
+        json.dump(output, archivo, indent=4,ensure_ascii=False)
