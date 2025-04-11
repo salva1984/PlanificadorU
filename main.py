@@ -11,7 +11,8 @@ driver = webdriver.Chrome()
 data = fu.leer_archivo()
 correo = data[0]
 password = data[1]
-
+cursos = fu.procesar_cursos(data[2])
+ 
 # Visitar la pagina del login incial
 driver.get(
     "https://www.academico.espol.edu.ec/login.aspx?ReturnUrl=%2fUI%2fInformacionAcademica%2finformaciongeneral.aspx")
@@ -50,7 +51,8 @@ print("Botón de iniciar sesion clickeado")
 driver.get("https://www.academico.espol.edu.ec/UI/Registros/materiasdisponibles.aspx")
 
 # Analiza la tabla
-su.extraer_datos_tabla(driver)
+su.visitar_enlaces(driver,su.extraer_datos_tabla(driver,cursos))
+
 
 
 

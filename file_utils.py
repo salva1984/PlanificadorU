@@ -5,3 +5,7 @@ def leer_archivo():
             data.append(linea.split("=")[1].strip("\n"))
             print(linea.split("="))
     return data
+
+
+def procesar_cursos(cursos: str):
+    return cursos.split(",")
